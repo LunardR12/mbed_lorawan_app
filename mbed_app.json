@@ -1,0 +1,48 @@
+{
+    "requires": ["bare-metal", 
+        "lora", 
+        "sx1272-lora-driver", 
+        "platform" , "target",
+        "HPMA115"
+        ],
+    
+    "config": {
+        "main_stack_size":     { "value": 2048 }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "platform.stdio-baud-rate": 115200,
+            "platform.default-serial-baud-rate": 115200,
+            "mbed-trace.enable": false,
+            "mbed-trace.max-level": "TRACE_LEVEL_DEBUG",
+            "lora.over-the-air-activation": true,
+            "lora.duty-cycle-on": true,
+            "lora.phy": "EU868",
+            "lora.device-eui": "{ 0xc0, 0xa6, 0x0e,0x35, 0xcf, 0xb1, 0x90, 0x16 }",
+            "lora.application-eui": "{  0x10, 0xCE, 0x45, 0xFF, 0xFE, 0x00, 0x8C, 0x7E }",
+            "lora.application-key": "{ 0x58, 0xab, 0x15, 0x46, 0x73, 0x0b, 0x4c, 0xf9, 0x0b, 0x0e, 0x08, 0xb4, 0xd1, 0xaa, 0x3f, 0x74 }",
+            "target.c_lib" : "small"
+        },
+
+        
+
+        "ZEST_CORE_FMLR-72": {
+            "target.components_add":             ["SX1272"],
+            "sx1272-lora-driver.spi-mosi":        "LORA_MOSI",
+            "sx1272-lora-driver.spi-miso":        "LORA_MISO",
+            "sx1272-lora-driver.spi-sclk":        "LORA_SCK",
+            "sx1272-lora-driver.spi-cs":          "LORA_CS",
+            "sx1272-lora-driver.reset":           "LORA_RESET",
+            "sx1272-lora-driver.dio0":            "LORA_DIO0",
+            "sx1272-lora-driver.dio1":            "LORA_DIO1",
+            "sx1272-lora-driver.dio2":            "LORA_DIO2",
+            "sx1272-lora-driver.dio3":            "LORA_DIO3",
+            "sx1272-lora-driver.dio4":            "LORA_DIO4"
+        }
+    },
+
+    "macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_lora_config.h\""]
+   
+}
+
