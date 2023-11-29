@@ -1,18 +1,22 @@
-#include <iostream>
-#include <stdio.h>
-#include <string>
+#ifndef
 
-#include "lorawan/LoRaWANInterface.h"
-#include "lorawan/system/lorawan_data_structures.h"
-#include "events/EventQueue.h"
+    #include <iostream>
+    #include <stdio.h>
+    #include <string>
 
-// Application helpers
-#include "./mbed_honeywell-hpma115/hpma115/hpma115.h"
-#include "trace_helper.h"
-#include "lora_radio_helper.h"
-#include <PinNames.h>
+    #include "lorawan/LoRaWANInterface.h"
+    #include "lorawan/system/lorawan_data_structures.h"
+    #include "events/EventQueue.h"
 
- using namespace events;
+    // Application helpers
+    #include "./mbed_honeywell-hpma115/hpma115/hpma115.h"
+    #include "trace_helper.h"
+    #include "lora_radio_helper.h"
+    #include <PinNames.h>
+
+#endif
+
+using namespace events;
  
 // Define a template class
 template <typename T>
@@ -99,5 +103,4 @@ public:
     void Connect();
 
     void Disconnect();
-
 };

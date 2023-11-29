@@ -1,6 +1,5 @@
 #include "LoRaWAN_class.hpp"
 
-
 /**
 * Sends a message to the Network Server
 */
