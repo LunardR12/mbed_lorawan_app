@@ -1,18 +1,19 @@
-#ifndef
+#ifndef LORAWAN_CLASS
+#define LORAWAN_CLASS
 
-    #include <iostream>
-    #include <stdio.h>
-    #include <string>
+#include <iostream>
+#include <stdio.h>
+#include <string>
 
-    #include "lorawan/LoRaWANInterface.h"
-    #include "lorawan/system/lorawan_data_structures.h"
-    #include "events/EventQueue.h"
+#include "lorawan/LoRaWANInterface.h"
+#include "lorawan/system/lorawan_data_structures.h"
+#include "events/EventQueue.h"
 
-    // Application helpers
-    #include "./mbed_honeywell-hpma115/hpma115/hpma115.h"
-    #include "trace_helper.h"
-    #include "lora_radio_helper.h"
-    #include <PinNames.h>
+// Application helpers
+#include "./mbed_honeywell-hpma115/hpma115/hpma115.h"
+#include "trace_helper.h"
+#include "lora_radio_helper.h"
+#include <PinNames.h>
 
 #endif
 
